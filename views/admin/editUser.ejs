@@ -1,0 +1,61 @@
+<%- include("./header.ejs") -%>
+        <!-- Section: Design Block -->
+    <section class="background-radial-gradient overflow-hidden">
+        
+      
+        <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+          <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+              <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                Admin Page <br />
+                <span style="color: hsl(218, 81%, 75%)">Edit User</span>
+              </h1>
+          
+            </div>
+      
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+              <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+              <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+      
+              <div class="card bg-glass">
+                <div class="card-body px-4 py-5 px-md-5">
+                  <form action="/admin/editUser" method="post" id="formId">
+
+                    <input type="hidden" name="id" value="<%=user._id %>">
+                       <!-- Name input -->
+                       <div class="form-outline mb-4">
+                        <input type="text" id="name" name="name"   value="<%= user.name %>" class="form-control"  />
+                        <label class="form-label" for="form3Example3">Name</label>
+                      </div>
+        
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="email" id="email" name="email" value="<%= user.email %>" class="form-control" />
+                      <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+      
+                    <!-- Password input -->
+                    <!-- <div class="form-outline mb-4">
+                      <input type="password" id="password" name="password" value="<%= user.password %>" class="form-control" required/>
+                      <label class="form-label" for="form3Example4">Password</label>
+                    </div> -->
+      
+                    <div class="text-danger" id="errorMessage"></div>
+      
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4 w-100">
+                     Edit
+                    </button>
+                   
+     
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Design Block -->
+      
+<script src="/js/editUserValidation.js"></script>
+<%- include("./footer.ejs") -%>
